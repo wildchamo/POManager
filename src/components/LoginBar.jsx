@@ -1,0 +1,35 @@
+import { Container } from "@mui/material";
+import React from "react";
+import logoPO from "../img/logoPO.png";
+import logoUAO from "../img/logouao.png";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { Stack } from "@mui/system";
+
+function LoginBar() {
+  return (
+    <Stack
+      direction="column"
+      justifyContent="space-evenly"
+      alignItems="center"
+      spacing={2}
+    >
+      <img src={logoPO} />
+
+      <TextField
+        margin="normal"
+        id="outlined-basic"
+        label="Usuario en GitHub"
+        placeholder="Ingresa tu usuario en GitHub <3"
+        autoFocus
+      />
+      <Button variant="contained" sx={{ backgroundColor: "#9E0B0F" }}>
+        Iniciar sesión{" "}
+      </Button>
+
+      <img src={logoUAO} />
+    </Stack>
+  );
+}
+
+export default LoginBar;
