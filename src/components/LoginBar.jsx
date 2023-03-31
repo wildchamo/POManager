@@ -13,6 +13,8 @@ function LoginBar() {
       justifyContent="space-evenly"
       alignItems="center"
       spacing={2}
+      padding="0 50px"
+      sx={{ width: "60vh" }}
     >
       <img src={logoPO} />
 
@@ -22,9 +24,13 @@ function LoginBar() {
         label="Usuario en GitHub"
         placeholder="Ingresa tu usuario en GitHub <3"
         autoFocus
+        fullWidth
       />
-      <Button variant="contained" sx={{ backgroundColor: "#9E0B0F" }}>
-        Iniciar sesión{" "}
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: "#9E0B0F" }}
+      >
+        Iniciar sesión
       </Button>
 
       <img src={logoUAO} />
