@@ -30,7 +30,7 @@ function LoginBar() {
         variant="contained"
         sx={{ backgroundColor: "#9E0B0F" }}
       >
-        Iniciar sesión
+        Iniciar sesión, hola soy JOse
       </Button>
 
       <img src={logoUAO} />
