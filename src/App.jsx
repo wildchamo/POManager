@@ -1,9 +1,9 @@
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
-import { createMuiTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
