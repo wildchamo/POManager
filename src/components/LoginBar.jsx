@@ -1,17 +1,19 @@
-import { Container } from "@mui/material";
 import React from "react";
 import logoPO from "../img/logoPO.png";
 import logoUAO from "../img/logouao.png";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { MenuItem } from "@mui/material";
 import { Stack } from "@mui/system";
 
 function LoginBar() {
   const [username, setUsername] = React.useState("");
+  const [unidad, setUnidad] = React.useState("");
 
   const login = (e) => {
     e.preventDefault();
     console.log(username);
+    console.log(unidad);
   };
 
   return (
@@ -32,11 +34,29 @@ function LoginBar() {
         onChange={(e) => setUsername(e.target.value)}
         margin="normal"
         id="outlined-basic"
-        label="Usuario en GitHub"
-        placeholder="Ingresa tu usuario en GitHub <3"
+        label="Nombre"
+        placeholder="Ingresa tu nombre <3"
         autoFocus
         fullWidth
+        required
       />
+
+      <TextField
+        value={unidad}
+        onChange={(e) => setUnidad(e.target.value)}
+        margin="normal"
+        id="outlined-basic"
+        label="Unidad de gestión"
+        placeholder="Ingresa la unidad a gestionar <3"
+        autoFocus
+        select
+        fullWidth
+        required
+      >
+        <MenuItem value="Gestión de procesos en TI">Unidad de gestión de procesos en TI</MenuItem>
+        <MenuItem value="Gestión de infraestructura">Unidad de gestión de infraestructura</MenuItem>
+      </TextField>
+
       <Button
         type="submit"
         variant="contained"
