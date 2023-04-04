@@ -2,6 +2,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { POProvider } from "./context";
 
 const theme = createTheme({
   palette: {
@@ -21,10 +22,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <HashRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+        <POProvider>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </POProvider>
       </HashRouter>
     </ThemeProvider>
   );

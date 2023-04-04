@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import {useAuth} from "../context";
 
 function Dashboard() {
-  return (
-    <div>Dashboard</div>
-  )
+  const auth = useAuth();
+
+  return (<>
+  <h1>Hola!,{auth.user.username}</h1>
+  <h1>La unidad es,{auth.user.unidad}</h1>
+  </>);
 }
 
-export default Dashboard
+export default Dashboard;

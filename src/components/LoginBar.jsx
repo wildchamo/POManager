@@ -5,15 +5,17 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
 import { Stack } from "@mui/system";
+import {useAuth} from "../context";
 
 function LoginBar() {
+  const auth = useAuth();
   const [username, setUsername] = React.useState("");
   const [unidad, setUnidad] = React.useState("");
 
   const login = (e) => {
     e.preventDefault();
-    console.log(username);
-    console.log(unidad);
+    auth.login({ username, unidad });
+    console.log(unidad)
   };
 
   return (
@@ -25,7 +27,7 @@ function LoginBar() {
       alignItems="center"
       spacing={2}
       padding="0 50px"
-      sx={{ width: "60vh" }}
+      sx={{ width: "64vh" }}
     >
       <img src={logoPO} />
 
@@ -53,15 +55,15 @@ function LoginBar() {
         fullWidth
         required
       >
-        <MenuItem value="Gestión de procesos en TI">Unidad de gestión de procesos en TI</MenuItem>
-        <MenuItem value="Gestión de infraestructura">Unidad de gestión de infraestructura</MenuItem>
+        <MenuItem value="Gestión de procesos en TI">
+          Unidad de gestión de procesos en TI
+        </MenuItem>
+        <MenuItem value="Gestión de infraestructura">
+          Unidad de gestión de infraestructura
+        </MenuItem>
       </TextField>
 
-      <Button
-        type="submit"
-        variant="contained"
-        sx={{ backgroundColor: "#9E0B0F" }}
-      >
+      <Button type="submit" variant="contained">
         Iniciar sesión
       </Button>
 
