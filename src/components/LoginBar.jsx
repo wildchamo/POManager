@@ -7,8 +7,17 @@ import Button from "@mui/material/Button";
 import { Stack } from "@mui/system";
 
 function LoginBar() {
+  const [username, setUsername] = React.useState("");
+
+  const login = (e) => {
+    e.preventDefault();
+    console.log("Hola, Jose");
+  };
+
   return (
     <Stack
+      component="form"
+      onSubmit={login}
       direction="column"
       justifyContent="space-evenly"
       alignItems="center"
@@ -27,6 +36,7 @@ function LoginBar() {
         fullWidth
       />
       <Button
+        type="submit"
         variant="contained"
         sx={{ backgroundColor: "#9E0B0F" }}
       >
