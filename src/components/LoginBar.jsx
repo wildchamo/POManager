@@ -11,7 +11,7 @@ function LoginBar() {
 
   const login = (e) => {
     e.preventDefault();
-    console.log("Hola, Jose");
+    console.log(username);
   };
 
   return (
@@ -28,6 +28,8 @@ function LoginBar() {
       <img src={logoPO} />
 
       <TextField
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         margin="normal"
         id="outlined-basic"
         label="Usuario en GitHub"
