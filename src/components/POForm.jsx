@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-function CreatePOForm() {
+function POForm({ name, type }) {
   return (
     <Grid
       component="form"
@@ -24,7 +24,7 @@ function CreatePOForm() {
       }}
     >
       <Grid element xs={12}>
-        <Typography>Creando un nuevo proyecto ...</Typography>
+        <Typography>{name}</Typography>
       </Grid>
       <Grid element xs={12}>
         <TextField
@@ -103,4 +103,4 @@ function CreatePOForm() {
   );
 }
 
-export default CreatePOForm;
+export default POForm;

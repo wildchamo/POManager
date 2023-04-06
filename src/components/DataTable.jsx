@@ -8,7 +8,7 @@ import TableFooter from "@mui/material/TableFooter";
 import AddIcon from "@mui/icons-material/Add";
 import POproyect from "./POproyect";
 import Modal from "@mui/material/Modal";
-import CreatePOForm from "./CreatePOForm";
+import POForm from "./POForm";
 
 import React from "react";
 
@@ -49,7 +49,7 @@ function DataTable({ unidad, proyectos }) {
               Crear nuevo proyecto
             </Button>
             <Modal open={open} onClose={handleClose}>
-              <CreatePOForm />
+              <POForm type={"crear"} name={"Creando un nuevo proyecto ..."} />
             </Modal>
           </TableFooter>
         </TableBody>
