@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-function POForm({ name, see }) {
+function POForm({ name, see, closeModal }) {
   return (
     <Grid
       component="form"
@@ -97,10 +97,12 @@ function POForm({ name, see }) {
               sx={{ width: "240px" }}
             >
               <Button variant="contained">Aceptar</Button>
-              <Button>Cancelar</Button>
+              <Button onClick={closeModal}>Cancelar</Button>
             </Stack>
           ) : (
-            <Button variant="contained">Aceptar</Button>
+            <Button variant="contained" onClick={closeModal}>
+              Aceptar
+            </Button>
           )}
         </Stack>
       </Grid>
