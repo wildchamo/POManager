@@ -13,7 +13,19 @@ function POproyect({ proyecto }) {
       <TableCell align="center">{proyecto.nombre}</TableCell>
       <TableCell align="center">{proyecto.fechaInicio}</TableCell>
       <TableCell align="center">{proyecto.fechaFin}</TableCell>
-      <TableCell align="center">● {proyecto.estado}</TableCell>
+      <TableCell
+        align="center"
+        sx={{
+          color:
+            proyecto.estado === "Activo"
+              ? "#31B465"
+              : proyecto.estado === "Anulado"
+              ? "#7E818C"
+              : "#C0A200",
+        }}
+      >
+        ● {proyecto.estado}
+      </TableCell>
       <TableCell align="center">
         <IconButton>
           <EditIcon />
