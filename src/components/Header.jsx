@@ -13,7 +13,7 @@ import Container from "@mui/material/Container";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header({ username }) {
+function Header({ username, logout }) {
   return (
     <Grid
       container
@@ -78,7 +78,7 @@ function Header({ username }) {
           alignItems: "center",
         }}
       >
-        <IconButton item>
+        <IconButton onClick={logout} item>
           <LogoutIcon />
         </IconButton>
       </Grid>

@@ -8,7 +8,7 @@ function Dashboard() {
 
   return (
     <>
-      <Header username={auth.user.username} />
+      <Header logout={auth.logout} username={auth.user.username} />
     </>
   );
 }
