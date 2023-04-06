@@ -1,15 +1,22 @@
-import { Paper, Typography } from "@mui/material";
+import { Paper, Typography, Button } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
+import TableFooter from "@mui/material/TableFooter";
+import AddIcon from "@mui/icons-material/Add";
 import POproyect from "./POproyect";
-
+import Modal from "@mui/material/Modal";
+import CreatePOForm from "./CreatePOForm";
 
 import React from "react";
 
 function DataTable({ unidad, proyectos }) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Paper elevation={1}>
       <Typography variant="h6" color="initial" sx={{ textAlign: "center" }}>
@@ -32,6 +39,19 @@ function DataTable({ unidad, proyectos }) {
           {proyectos.map((proyecto) => (
             <POproyect key={proyecto.id} proyecto={proyecto} />
           ))}
+
+          <TableFooter>
+            <Button
+              onClick={handleOpen}
+              variant="contained"
+              startIcon={<AddIcon />}
+            >
+              Crear nuevo proyecto
+            </Button>
+            <Modal open={open} onClose={handleClose}>
+              <CreatePOForm />
+            </Modal>
+          </TableFooter>
         </TableBody>
       </Table>
     </Paper>
