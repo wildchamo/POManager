@@ -3,11 +3,11 @@ import { Grid } from "@mui/material";
 import DataTable from "./DataTable";
 import PieChart from "./PieChart";
 
-function Main({ unidad }) {
+function Main({ unidad, proyectos }) {
   return (
     <Grid container>
       <Grid item xs={9}>
-        <DataTable unidad={unidad} />
+        <DataTable unidad={unidad} proyectos={proyectos} />
       </Grid>
       <Grid item xs={3}>
         <PieChart />

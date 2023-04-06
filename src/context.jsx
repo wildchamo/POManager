@@ -5,15 +5,17 @@ const POContext = React.createContext();
 
 const POprojets = [
   {
+    id:1,
     nombre: "Investigación arquitectura PWA",
     fechaInicio: "2021-11-03",
     fechaFin: "2022-10-02",
     fechaCreacion: "",
-    estado: "Cerrado",
+    estado: "Activo",
     descripcion: "Soy una descripción",
     motivoCancelacion: "jose",
   },
   {
+    id:2,
     nombre: "Software de encuestas Limesurvey",
     fechaInicio: "2021-11-05",
     fechaFin: "2022-10-05",
@@ -23,6 +25,7 @@ const POprojets = [
     motivoCancelacion: "",
   },
   {
+    id:3,
     nombre: "ChatBot Sinapsis (Diseño de flujo)",
     fechaInicio: "2021-11-07",
     fechaFin: "2022-10-03",
@@ -51,7 +54,7 @@ function POProvider({ children }) {
     navigate("/");
   };
 
-  const auth = { user, login, logout };
+  const auth = { user, login, logout, proyectos };
   return <POContext.Provider value={auth}>{children}</POContext.Provider>;
 }
 
