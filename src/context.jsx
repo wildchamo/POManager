@@ -3,9 +3,40 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 const POContext = React.createContext();
 
+const POprojets = [
+  {
+    nombre: "Investigación arquitectura PWA",
+    fechaInicio: "2021-11-03",
+    fechaFin: "2022-10-02",
+    fechaCreacion: "",
+    estado: "Cerrado",
+    descripcion: "Soy una descripción",
+    motivoCancelacion: "jose",
+  },
+  {
+    nombre: "Software de encuestas Limesurvey",
+    fechaInicio: "2021-11-05",
+    fechaFin: "2022-10-05",
+    fechaCreacion: "2022-10-04",
+    estado: "Cancelado",
+    descripcion: "Soy una descripción",
+    motivoCancelacion: "",
+  },
+  {
+    nombre: "ChatBot Sinapsis (Diseño de flujo)",
+    fechaInicio: "2021-11-07",
+    fechaFin: "2022-10-03",
+    fechaCreacion: "2021-11-03",
+    estado: "Activo",
+    descripcion: "Soy una descripción",
+    motivoCancelacion: "",
+  },
+];
+
 function POProvider({ children }) {
   const [user, setUser] = React.useState(null);
   const [unidad, setUnidad] = React.useState(null);
+  const [proyectos, setProyectos] = React.useState(POprojets);
 
   const navigate = useNavigate();
 
