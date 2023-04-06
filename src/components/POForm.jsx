@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-function POForm({ name, type }) {
+function POForm({ name, see }) {
   return (
     <Grid
       component="form"
@@ -89,14 +89,19 @@ function POForm({ name, type }) {
           <Typography>
             Los campos marcados con ‘*’ son de carácter obligatorio.
           </Typography>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            sx={{ width: "240px" }}
-          >
-            <Button>Cancelar</Button>
+
+          {see === true ? (
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              sx={{ width: "240px" }}
+            >
+              <Button variant="contained">Aceptar</Button>
+              <Button>Cancelar</Button>
+            </Stack>
+          ) : (
             <Button variant="contained">Aceptar</Button>
-          </Stack>
+          )}
         </Stack>
       </Grid>
     </Grid>

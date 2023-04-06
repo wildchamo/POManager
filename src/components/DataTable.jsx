@@ -49,7 +49,7 @@ function DataTable({ unidad, proyectos }) {
               Crear nuevo proyecto
             </Button>
             <Modal open={open} onClose={handleClose}>
-              <POForm type={"crear"} name={"Creando un nuevo proyecto ..."} />
+              <POForm see={true} name={"Creando un nuevo proyecto ..."} />
             </Modal>
           </TableFooter>
         </TableBody>
