@@ -1,13 +1,16 @@
 import React from "react";
-import {useAuth} from "../context";
+import { useAuth } from "../context";
+import Header from "../components/Header.jsx";
 
 function Dashboard() {
   const auth = useAuth();
+  // unidad={auth.user.unidad}
 
-  return (<>
-  <h1>Hola!,{auth.user.username}</h1>
-  <h1>La unidad es,{auth.user.unidad}</h1>
-  </>);
+  return (
+    <>
+      <Header username={auth.user.username} />
+    </>
+  );
 }
 
 export default Dashboard;
