@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Grid, TextField, Button } from "@mui/material";
+import { MenuItem } from "@mui/material";
 
 function CreatePOForm() {
   return (
@@ -73,21 +74,32 @@ function CreatePOForm() {
       </Grid>
       <Grid element>
         <TextField
+          //   value={unidad}
+          //   onChange={(e) => setUnidad(e.target.value)}
           margin="normal"
           id="outlined-basic"
-          label="Nombre del proyecto"
-          placeholder="Ingresa el nombre del proyecto"
+          label="Estado"
+          placeholder="Selecciona el estado de tu proyecto"
           autoFocus
+          select
           fullWidth
           required
-        />
+        >
+          <MenuItem value="Activo">
+            Activo
+          </MenuItem>
+          <MenuItem value="Suspendido">
+            Suspendido
+          </MenuItem>
+        </TextField>
       </Grid>
       <Grid element>
-        <Typography>Los campos marcados con ‘*’ son de carácter obligatorio.</Typography>
+        <Typography>
+          Los campos marcados con ‘*’ son de carácter obligatorio.
+        </Typography>
 
         <Button>Cancelar</Button>
         <Button variant="contained">Aceptar</Button>
-
       </Grid>
     </Grid>
   );
