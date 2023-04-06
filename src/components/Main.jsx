@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { Grid } from "@mui/material";
+import DataTable from "./DataTable";
+import PieChart from "./PieChart";
 
-function Main({unidad}) {
+function Main({ unidad }) {
   return (
-    <div>Proyectos operativos de la Unidad de {unidad}</div>
-  )
+    <Grid container>
+      <Grid item xs={9}>
+        <DataTable unidad={unidad} />
+      </Grid>
+      <Grid item xs={3}>
+        <PieChart />
+      </Grid>
+    </Grid>
+  );
 }
 
-export default Main
+export default Main;
