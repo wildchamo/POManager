@@ -2,7 +2,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { POProvider } from "./context";
+import { POProvider, PrivateRoute } from "./context";
 
 const theme = createTheme({
   palette: {
@@ -25,7 +25,14 @@ function App() {
         <POProvider>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </POProvider>
       </HashRouter>

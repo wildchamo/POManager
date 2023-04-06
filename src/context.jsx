@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const POContext = React.createContext();
 
@@ -28,5 +28,13 @@ function useAuth() {
   const auth = useContext(POContext);
   return auth;
 }
+function PrivateRoute(props) {
+  const auth = useAuth();
 
-export { POProvider, useAuth };
+  if (!auth.user) {
+    return <Navigate to={"/"} />;
+  }
+  return props.children;
+}
+
+export { POProvider, useAuth, PrivateRoute };
