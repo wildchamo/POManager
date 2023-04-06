@@ -55,11 +55,11 @@ function LoginBar() {
         fullWidth
         required
       >
-        <MenuItem value="Gestión de procesos en TI">
-          Unidad de gestión de procesos en TI
+        <MenuItem value="Gestión de Procesos en TI">
+          Unidad de Gestión de procesos en TI
         </MenuItem>
-        <MenuItem value="Gestión de infraestructura">
-          Unidad de gestión de infraestructura
+        <MenuItem value="Gestión de Infraestructura">
+          Unidad de Gestión de Infraestructura
         </MenuItem>
       </TextField>
 

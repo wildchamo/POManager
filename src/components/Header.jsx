@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import logoHeader from "../img/logoheader.png";
-import Container from "@mui/material/Container";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -18,10 +17,6 @@ function Header({ username, logout }) {
     <Grid
       container
       sx={{
-        position: "fixed",
-        zIndex: "1100",
-        top: "0",
-        left: "auto",
         marginTop: "14px",
         marginLeft: "10px",
       }}
@@ -35,7 +30,7 @@ function Header({ username, logout }) {
           }}
         >
           <img src={logoHeader} />
-          <Typography variant="h5" sx={{ fontWeight: "700" }}>
+          <Typography variant="h5" sx={{ fontWeight: "700", color: "#C4161C" }}>
             ¡Bienvenido a OP manager, {username}!
           </Typography>
         </Stack>
