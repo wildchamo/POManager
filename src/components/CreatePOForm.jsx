@@ -1,29 +1,95 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import { Typography, Button } from "@mui/material";
+import { Typography, Grid, TextField, Button } from "@mui/material";
 
 function CreatePOForm() {
   return (
-    <Box
+    <Grid
+      component="form"
+      container
       sx={{
         position: "absolute",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: 400,
+        width: "80%",
         bgcolor: "background.paper",
         border: "2px solid #000",
         boxShadow: 24,
         p: 4,
       }}
     >
-      <Typography id="modal-modal-title" variant="h6" component="h2">
-        Text in a modal
-      </Typography>
-      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </Typography>
-    </Box>
+      <Grid element>
+        <Typography>Creando un nuevo proyecto ...</Typography>
+      </Grid>
+      <Grid element>
+        <TextField
+          margin="normal"
+          id="outlined-basic"
+          label="Nombre del proyecto"
+          placeholder="Ingresa el nombre del proyecto"
+          autoFocus
+          fullWidth
+          required
+        />
+      </Grid>
+
+      <Grid element>
+        <TextField
+          margin="normal"
+          id="outlined-basic"
+          label="Nombre del proyecto"
+          placeholder="Ingresa el nombre del proyecto"
+          autoFocus
+          fullWidth
+          required
+        />
+        <TextField
+          margin="normal"
+          id="outlined-basic"
+          label="Nombre del proyecto"
+          placeholder="Ingresa el nombre del proyecto"
+          autoFocus
+          fullWidth
+          required
+        />
+        <TextField
+          margin="normal"
+          id="outlined-basic"
+          label="Nombre del proyecto"
+          placeholder="Ingresa el nombre del proyecto"
+          autoFocus
+          fullWidth
+          required
+        />
+        <TextField
+          margin="normal"
+          id="outlined-basic"
+          label="Nombre del proyecto"
+          placeholder="Ingresa el nombre del proyecto"
+          autoFocus
+          fullWidth
+          required
+        />
+      </Grid>
+      <Grid element>
+        <TextField
+          margin="normal"
+          id="outlined-basic"
+          label="Nombre del proyecto"
+          placeholder="Ingresa el nombre del proyecto"
+          autoFocus
+          fullWidth
+          required
+        />
+      </Grid>
+      <Grid element>
+        <Typography>Los campos marcados con ‘*’ son de carácter obligatorio.</Typography>
+
+        <Button>Cancelar</Button>
+        <Button variant="contained">Aceptar</Button>
+
+      </Grid>
+    </Grid>
   );
 }
 
