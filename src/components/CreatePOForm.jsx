@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, TextField, Button } from "@mui/material";
+import { Typography, Grid, TextField, Button, Stack } from "@mui/material";
 import { MenuItem } from "@mui/material";
 
 function CreatePOForm() {
@@ -19,10 +19,10 @@ function CreatePOForm() {
         p: 4,
       }}
     >
-      <Grid element>
+      <Grid element xs={12}>
         <Typography>Creando un nuevo proyecto ...</Typography>
       </Grid>
-      <Grid element>
+      <Grid element xs={12}>
         <TextField
           margin="normal"
           id="outlined-basic"
@@ -34,72 +34,77 @@ function CreatePOForm() {
         />
       </Grid>
 
-      <Grid element>
+      <Grid element xs={12} spacing={2}>
+        <Stack direction="row">
+          <TextField
+            margin="normal"
+            id="outlined-basic"
+            label="Nombre del proyecto"
+            placeholder="Ingresa el nombre del proyecto"
+            autoFocus
+            fullWidth
+            required
+          />
+          <TextField
+            margin="normal"
+            id="outlined-basic"
+            label="Nombre del proyecto"
+            placeholder="Ingresa el nombre del proyecto"
+            autoFocus
+            fullWidth
+            required
+          />
+          <TextField
+            margin="normal"
+            id="outlined-basic"
+            label="Nombre del proyecto"
+            placeholder="Ingresa el nombre del proyecto"
+            autoFocus
+            fullWidth
+            required
+          />
+          <TextField
+            //   value={unidad}
+            //   onChange={(e) => setUnidad(e.target.value)}
+            margin="normal"
+            id="outlined-basic"
+            label="Estado"
+            placeholder="Selecciona el estado de tu proyecto"
+            autoFocus
+            select
+            fullWidth
+            required
+          >
+            <MenuItem value="Activo">Activo</MenuItem>
+            <MenuItem value="Suspendido">Suspendido</MenuItem>
+          </TextField>
+        </Stack>
+      </Grid>
+      <Grid element xs={12}>
         <TextField
           margin="normal"
           id="outlined-basic"
-          label="Nombre del proyecto"
-          placeholder="Ingresa el nombre del proyecto"
-          autoFocus
-          fullWidth
-          required
-        />
-        <TextField
-          margin="normal"
-          id="outlined-basic"
-          label="Nombre del proyecto"
-          placeholder="Ingresa el nombre del proyecto"
-          autoFocus
-          fullWidth
-          required
-        />
-        <TextField
-          margin="normal"
-          id="outlined-basic"
-          label="Nombre del proyecto"
-          placeholder="Ingresa el nombre del proyecto"
-          autoFocus
-          fullWidth
-          required
-        />
-        <TextField
-          margin="normal"
-          id="outlined-basic"
-          label="Nombre del proyecto"
-          placeholder="Ingresa el nombre del proyecto"
+          label="Descripción del proyecto"
+          placeholder="Ingresa la descripción del proyecto"
           autoFocus
           fullWidth
           required
         />
       </Grid>
-      <Grid element>
-        <TextField
-          //   value={unidad}
-          //   onChange={(e) => setUnidad(e.target.value)}
-          margin="normal"
-          id="outlined-basic"
-          label="Estado"
-          placeholder="Selecciona el estado de tu proyecto"
-          autoFocus
-          select
-          fullWidth
-          required
-        >
-          <MenuItem value="Activo">
-            Activo
-          </MenuItem>
-          <MenuItem value="Suspendido">
-            Suspendido
-          </MenuItem>
-        </TextField>
-      </Grid>
-      <Grid element>
-        <Typography>
-          Los campos marcados con ‘*’ son de carácter obligatorio.
-        </Typography>
-
-        <Button>Cancelar</Button>
-        <Button variant="contained">Aceptar</Button>
+      <Grid element xs={12}>
+        <Stack direction="row" justifyContent="space-between">
+          <Typography>
+            Los campos marcados con ‘*’ son de carácter obligatorio.
+          </Typography>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            sx={{ width: "240px" }}
+          >
+            <Button>Cancelar</Button>
+            <Button variant="contained">Aceptar</Button>
+          </Stack>
+        </Stack>
       </Grid>
     </Grid>
   );
