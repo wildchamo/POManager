@@ -4,7 +4,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
-import TableFooter from "@mui/material/TableFooter";
 import AddIcon from "@mui/icons-material/Add";
 import POproyect from "./POproyect";
 import Modal from "@mui/material/Modal";
@@ -20,7 +19,7 @@ function DataTable({ unidad, proyectos }) {
   return (
     <Paper elevation={1}>
       <Typography variant="h6" color="initial" sx={{ textAlign: "center" }}>
-        Proyectos operativos de la Unidad de {unidad}{" "}
+        Proyectos operativos de la Unidad de {unidad}
       </Typography>
 
       <Table>
@@ -40,7 +39,7 @@ function DataTable({ unidad, proyectos }) {
             <POproyect key={proyecto.id} proyecto={proyecto} />
           ))}
 
-          <TableFooter>
+          <TableRow>
             <Button
               onClick={handleOpen}
               variant="contained"
@@ -49,9 +48,13 @@ function DataTable({ unidad, proyectos }) {
               Crear nuevo proyecto
             </Button>
             <Modal open={open} onClose={handleClose}>
-              <POForm see={true} closeModal={handleClose} name={"Creando un nuevo proyecto ..."} />
+              <POForm
+                see={true}
+                closeModal={handleClose}
+                name={"Creando un nuevo proyecto ..."}
+              />
             </Modal>
-          </TableFooter>
+          </TableRow>
         </TableBody>
       </Table>
     </Paper>

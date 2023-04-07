@@ -4,6 +4,7 @@ import { MenuItem } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 
 function POForm({ name, see, closeModal }) {
   return (
@@ -48,7 +49,10 @@ function POForm({ name, see, closeModal }) {
               <DatePicker label="Fecha de finalización" />
             </Grid>
             <Grid item xs={3}>
-              <DatePicker label="Fecha de creación" />
+              <DatePicker
+                label="Fecha de creación"
+                defaultValue={dayjs()}
+              />
             </Grid>
             <Grid item xs={3}>
               <TextField
