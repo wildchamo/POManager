@@ -12,7 +12,11 @@ function PieChart() {
   const data = {
     datasets: [
       {
-        data: [auth.noProyectos, auth.noProyectos, auth.noProyectos],
+        data: [
+          auth.proyectosActivosValue,
+          auth.proyectosSuspendidosValue,
+          auth.proyectosAnuladosValue,
+        ],
         backgroundColor: ["#31B465", "#FFD600", "#7E818C"],
         borderColor: ["#31B465", "#FFD600", "#7E818C"],
         borderWidth: 1,
@@ -21,7 +25,12 @@ function PieChart() {
   };
 
   return (
-    <Stack alignItems="center">
+    <Stack
+      direction="column"
+      justifyContent="space-around"
+      alignItems="center"
+      spacing={2}
+    >
       <Typography align="center" variant="h5">
         Tienes {auth.noProyectos} proyectos!
       </Typography>
@@ -31,24 +40,23 @@ function PieChart() {
       <Stack direction="row">
         <Typography sx={{ color: "#31B465" }}>●</Typography>
         <Typography align="center" variant="h7">
-          {auth.noProyectos} proyectos activos
+          {auth.proyectosActivosValue} proyectos activos
         </Typography>
       </Stack>
 
       <Stack direction="row">
         <Typography sx={{ color: "#FFD600" }}>●</Typography>
         <Typography align="center" variant="h7">
-          {auth.noProyectos} proyectos suspendidos
+          {auth.proyectosSuspendidosValue} proyectos suspendidos
         </Typography>
       </Stack>
 
       <Stack direction="row">
         <Typography sx={{ color: "#7E818C" }}>●</Typography>
         <Typography align="center" variant="h7">
-          {auth.noProyectos} proyectos anulados
+          {auth.proyectosAnuladosValue} proyectos anulados
         </Typography>
       </Stack>
-
     </Stack>
   );
 }

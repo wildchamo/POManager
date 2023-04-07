@@ -41,6 +41,21 @@ function POProvider({ children }) {
   const [unidad, setUnidad] = React.useState(null);
   const [proyectos, setProyectos] = React.useState(POprojets);
 
+  let proyectosActivos = proyectos.filter(
+    (proyecto) => proyecto.estado === "Activo"
+  );
+  let proyectosActivosValue = proyectosActivos.length;
+
+  let proyectosSuspendidos = proyectos.filter(
+    (proyecto) => proyecto.estado === "Suspendido"
+  );
+  let proyectosSuspendidosValue = proyectosSuspendidos.length;
+
+  let proyectosAnulados = proyectos.filter(
+    (proyecto) => proyecto.estado === "Anulado"
+  );
+  let proyectosAnuladosValue = proyectosAnulados.length;
+
   const navigate = useNavigate();
 
   const noProyectos = proyectos.length;
@@ -114,6 +129,9 @@ function POProvider({ children }) {
     createPO,
     editPO,
     noProyectos,
+    proyectosActivosValue,
+    proyectosSuspendidosValue,
+    proyectosAnuladosValue,
   };
   return <POContext.Provider value={auth}>{children}</POContext.Provider>;
 }
