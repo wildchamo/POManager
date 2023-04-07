@@ -6,12 +6,22 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
-function POForm({ name, see, closeModal }) {
+function POForm({ name, see, closeModal,POcreate }) {
   const [fechaInicio, setfechaInicio] = React.useState();
   const [fechaFin, setfechaFin] = React.useState();
+  const [nombre, setNombre] = React.useState("");
+  const [estado, setEstado] = React.useState("");
+  const [descripcion, setDescripcion] = React.useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+  };
+
   return (
     <Grid
       component="form"
+      onSubmit={handleClick}
       container
       sx={{
         position: "absolute",
@@ -38,6 +48,8 @@ function POForm({ name, see, closeModal }) {
           autoFocus
           fullWidth
           required
+          value={nombre}
+          onChange={(newValue) => setNombre(newValue)}
         />
       </Grid>
 
@@ -48,8 +60,8 @@ function POForm({ name, see, closeModal }) {
               <DatePicker
                 label="Fecha de inicio"
                 value={fechaInicio}
-                maxDate={fechaFin}
                 onChange={(newValue) => setfechaInicio(newValue)}
+                maxDate={fechaFin}
                 minDate={dayjs()}
               />
             </Grid>
@@ -80,6 +92,8 @@ function POForm({ name, see, closeModal }) {
                 select
                 fullWidth
                 required
+                value={estado}
+                onChange={(newValue) => setEstado(newValue)}
                 sx={{
                   paddingBottom: "3px",
                 }}
@@ -100,6 +114,8 @@ function POForm({ name, see, closeModal }) {
           autoFocus
           fullWidth
           required
+          value={descripcion}
+          onChange={(newValue) => setDescripcion(newValue)}
         />
       </Grid>
       <Grid element xs={12}>
@@ -114,7 +130,9 @@ function POForm({ name, see, closeModal }) {
               justifyContent="space-between"
               sx={{ width: "240px" }}
             >
-              <Button variant="contained">Aceptar</Button>
+              <Button variant="contained" type="submit">
+                Aceptar
+              </Button>
               <Button onClick={closeModal}>Cancelar</Button>
             </Stack>
           ) : (
