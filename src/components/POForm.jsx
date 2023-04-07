@@ -23,9 +23,9 @@ function POForm({ name, see, closeModal, handleEvent }) {
       nombre,
       estado,
       fechaInicio,
-      fechaFin
-      // fechaCreacion,
-      // descripcion
+      fechaFin,
+     fechaCreacion,
+      descripcion
     );
     closeModal();
   };

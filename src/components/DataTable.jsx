@@ -54,14 +54,21 @@ function DataTable({ unidad, proyectos }) {
               <POForm
                 see={true}
                 closeModal={handleClose}
-                handleEvent={(nombre, estado, fechaInicio, fechaFin) =>
+                handleEvent={(
+                  nombre,
+                  estado,
+                  fechaInicio,
+                  fechaFin,
+                  fechaCreacion,
+                  descripcion
+                ) =>
                   auth.createPO(
                     nombre,
                     estado,
                     fechaInicio,
-                    fechaFin
-                    // fechaCreacion,
-                    // descripcion
+                    fechaFin,
+                    fechaCreacion,
+                    descripcion
                   )
                 }
                 name={"Creando un nuevo proyecto ..."}
