@@ -98,7 +98,11 @@ function POproyect({ proyecto }) {
       </Modal>
 
       <Modal open={open3} onClose={handleClose3}>
-        <POFormAnul closeModal={handleClose3} proyecto={proyecto} />
+        <POFormAnul
+          closeModal={handleClose3}
+          proyecto={proyecto}
+          handleEvent={(id, justificacion) => auth.anulPO(id, justificacion)}
+        />
       </Modal>
     </>
   );

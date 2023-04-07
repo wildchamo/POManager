@@ -1,7 +1,15 @@
 import React from "react";
 import { Typography, Grid, TextField, Button, Stack } from "@mui/material";
 
-function POFormAnul({ proyecto, closeModal }) {
+function POFormAnul({ proyecto, closeModal, handleEvent }) {
+  const [justificacion, setjustificacion] = React.useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    handleEvent(proyecto.id, justificacion);
+    closeModal();
+  };
+
   return (
     <Grid
       component="form"
@@ -27,8 +35,8 @@ function POFormAnul({ proyecto, closeModal }) {
       </Grid>
       <Grid item xs={12}>
         <TextField
-          //   value={nombre}
-          //   onChange={(e) => setNombre(e.target.value)}
+          value={justificacion}
+          onChange={(e) => setjustificacion(e.target.value)}
           margin="normal"
           id="outlined-basic"
           label="Justificación"
@@ -45,8 +53,10 @@ function POFormAnul({ proyecto, closeModal }) {
           alignItems="center"
           spacing={4}
         >
-          <Button variant="contained" onClick={closeModal}>Cancelar</Button>
-          <Button>Anular proyecto</Button>
+          <Button variant="contained" onClick={closeModal}>
+            Cancelar
+          </Button>
+          <Button onClick={handleClick}>Anular proyecto</Button>
         </Stack>
       </Grid>
     </Grid>

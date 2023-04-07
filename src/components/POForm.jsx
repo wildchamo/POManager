@@ -29,6 +29,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
     );
     closeModal();
   };
+  
   const inputProps = {
     disabled: see === true ? true : false,
   };
