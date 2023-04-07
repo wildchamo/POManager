@@ -7,18 +7,7 @@ import TableCell from "@mui/material/TableCell";
 import { IconButton } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import POForm from "./POForm";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { useAuth } from "../context";
 
 function POproyect({ proyecto }) {
   const [open, setOpen] = React.useState(false);
@@ -28,6 +17,8 @@ function POproyect({ proyecto }) {
   const [open2, setOpen2] = React.useState(false);
   const handleOpen2 = () => setOpen2(true);
   const handleClose2 = () => setOpen2(false);
+
+  const auth = useAuth();
 
   return (
     <>
@@ -79,6 +70,25 @@ function POproyect({ proyecto }) {
           closeModal={handleClose2}
           proyecto={proyecto}
           name={"Detalles del proyecto"}
+          handleEvent={(
+            id,
+            nombre,
+            estado,
+            fechaInicio,
+            fechaFin,
+            fechaCreacion,
+            descripcion
+          ) =>
+            auth.editPO(
+              id,
+              nombre,
+              estado,
+              fechaInicio,
+              fechaFin,
+              fechaCreacion,
+              descripcion
+            )
+          }
         />
       </Modal>
     </>

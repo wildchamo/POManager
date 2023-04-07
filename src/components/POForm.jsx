@@ -18,8 +18,8 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    // handleEvent(nombre, estado, fechaInicio);
     handleEvent(
+      proyecto.id,
       nombre,
       estado,
       fechaInicio,
