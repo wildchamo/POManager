@@ -6,7 +6,7 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import { IconButton } from "@mui/material";
 import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
+import POForm from "./POForm";
 
 const style = {
   position: "absolute",
@@ -62,9 +62,12 @@ function POproyect({ proyecto }) {
       </TableRow>
 
       <Modal open={open} onClose={handleClose}>
-        <Box sx={style}>
-          <p>holaa, soy Jose</p>
-        </Box>
+      <POForm
+                see={true}
+                closeModal={handleClose}
+                proyecto={proyecto}
+                name={"Detalles del proyecto"}
+              />
       </Modal>
     </>
   );

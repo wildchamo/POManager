@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Grid, TextField, Button, Stack } from "@mui/material";
 import { MenuItem } from "@mui/material";
 
-function POForm({ name, see, closeModal, handleEvent, proyecto }) {
+function POFormCreate({ closeModal, handleEvent }) {
   var fechaCreacion = new Date();
   var dd = String(fechaCreacion.getDate()).padStart(2, "0");
   var mm = String(fechaCreacion.getMonth() + 1).padStart(2, "0"); //January is 0!
@@ -24,7 +24,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
       estado,
       fechaInicio,
       fechaFin,
-     fechaCreacion,
+      fechaCreacion,
       descripcion
     );
     closeModal();
@@ -49,7 +49,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
       }}
     >
       <Grid element xs={12}>
-        <Typography>{name} {proyecto.nombre}</Typography>
+        <Typography>Creando un nuevo proyecto</Typography>
       </Grid>
       <Grid element xs={12}>
         <TextField
@@ -84,7 +84,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               value={fechaFin}
               onChange={(e) => setfechaFin(e.target.value)}
               min={fechaInicio}
-
             />
           </Grid>
           <Grid item xs={3}>
@@ -133,26 +132,20 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
             Los campos marcados con ‘*’ son de carácter obligatorio.
           </Typography>
 
-          {see === true ? (
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              sx={{ width: "240px" }}
-            >
-              <Button variant="contained" type="submit">
-                Aceptar
-              </Button>
-              <Button onClick={closeModal}>Cancelar</Button>
-            </Stack>
-          ) : (
-            <Button variant="contained" onClick={closeModal}>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            sx={{ width: "240px" }}
+          >
+            <Button variant="contained" type="submit">
               Aceptar
             </Button>
-          )}
+            <Button onClick={closeModal}>Cancelar</Button>
+          </Stack>
         </Stack>
       </Grid>
     </Grid>
   );
 }
 
-export default POForm;
+export default POFormCreate;
