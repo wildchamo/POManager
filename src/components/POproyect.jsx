@@ -8,6 +8,7 @@ import { IconButton } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import POForm from "./POForm";
 import { useAuth } from "../context";
+import POFormAnul from "./POFormAnul";
 
 function POproyect({ proyecto }) {
   const [open, setOpen] = React.useState(false);
@@ -17,6 +18,10 @@ function POproyect({ proyecto }) {
   const [open2, setOpen2] = React.useState(false);
   const handleOpen2 = () => setOpen2(true);
   const handleClose2 = () => setOpen2(false);
+
+  const [open3, setOpen3] = React.useState(false);
+  const handleOpen3 = () => setOpen3(true);
+  const handleClose3 = () => setOpen3(false);
 
   const auth = useAuth();
 
@@ -51,7 +56,7 @@ function POproyect({ proyecto }) {
         </TableCell>
         <TableCell align="center">
           <IconButton>
-            <CancelIcon />
+            <CancelIcon onClick={handleOpen3} />
           </IconButton>
         </TableCell>
       </TableRow>
@@ -90,6 +95,10 @@ function POproyect({ proyecto }) {
             )
           }
         />
+      </Modal>
+
+      <Modal open={open3} onClose={handleClose3}>
+        <POFormAnul closeModal={handleClose3} proyecto={proyecto} />
       </Modal>
     </>
   );
