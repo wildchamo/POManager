@@ -8,6 +8,7 @@ import AddIcon from "@mui/icons-material/Add";
 import POproyect from "./POproyect";
 import Modal from "@mui/material/Modal";
 import POForm from "./POForm";
+import { useAuth } from "../context";
 
 import React from "react";
 
@@ -15,6 +16,8 @@ function DataTable({ unidad, proyectos }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const auth = useAuth();
 
   return (
     <Paper elevation={1}>
@@ -51,6 +54,9 @@ function DataTable({ unidad, proyectos }) {
               <POForm
                 see={true}
                 closeModal={handleClose}
+                handleEvent={(nombre, estado, fechaInicio) =>
+                  auth.createPO(nombre, estado, fechaInicio)
+                }
                 name={"Creando un nuevo proyecto ..."}
               />
             </Modal>

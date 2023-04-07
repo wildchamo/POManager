@@ -6,7 +6,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
-function POForm({ name, see, closeModal,POcreate }) {
+function POForm({ name, see, closeModal, handleEvent }) {
+  var fechaHoy = dayjs().format("DD/MM/YYYY");
+
   const [fechaInicio, setfechaInicio] = React.useState();
   const [fechaFin, setfechaFin] = React.useState();
   const [nombre, setNombre] = React.useState("");
@@ -15,7 +17,9 @@ function POForm({ name, see, closeModal,POcreate }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-
+    handleEvent(nombre, estado, fechaInicio);
+    console.log(nombre, estado, fechaHoy);
+    closeModal();
   };
 
   return (
@@ -41,6 +45,8 @@ function POForm({ name, see, closeModal,POcreate }) {
       </Grid>
       <Grid element xs={12}>
         <TextField
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
           margin="normal"
           id="outlined-basic"
           label="Nombre del proyecto"
@@ -48,8 +54,6 @@ function POForm({ name, see, closeModal,POcreate }) {
           autoFocus
           fullWidth
           required
-          value={nombre}
-          onChange={(newValue) => setNombre(newValue)}
         />
       </Grid>
 
@@ -82,8 +86,9 @@ function POForm({ name, see, closeModal,POcreate }) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                //   value={unidad}
-                //   onChange={(e) => setUnidad(e.target.value)}
+                value={estado}
+                defaultValue={estado}
+                onChange={(e) => setEstado(e.target.value)}
                 margin="normal"
                 id="outlined-basic"
                 label="Estado"
@@ -92,11 +97,6 @@ function POForm({ name, see, closeModal,POcreate }) {
                 select
                 fullWidth
                 required
-                value={estado}
-                onChange={(newValue) => setEstado(newValue)}
-                sx={{
-                  paddingBottom: "3px",
-                }}
               >
                 <MenuItem value="Activo">Activo</MenuItem>
                 <MenuItem value="Suspendido">Suspendido</MenuItem>
@@ -113,9 +113,8 @@ function POForm({ name, see, closeModal,POcreate }) {
           placeholder="Ingresa la descripción del proyecto"
           autoFocus
           fullWidth
-          required
           value={descripcion}
-          onChange={(newValue) => setDescripcion(newValue)}
+          onChange={(e) => setDescripcion(e.target.value)}
         />
       </Grid>
       <Grid element xs={12}>

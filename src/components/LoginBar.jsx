@@ -15,7 +15,6 @@ function LoginBar() {
   const login = (e) => {
     e.preventDefault();
     auth.login({ username, unidad });
-    console.log(unidad)
   };
 
   return (
