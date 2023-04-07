@@ -81,7 +81,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               onChange={(e) => setfechaInicio(e.target.value)}
               min={fechaCreacion}
               max={fechaFin}
-
+              disabled={see}
             />
           </Grid>
           <Grid item xs={3}>
@@ -91,7 +91,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               value={fechaFin}
               onChange={(e) => setfechaFin(e.target.value)}
               min={fechaInicio}
-
+              disabled={see}
             />
           </Grid>
           <Grid item xs={3}>
@@ -100,7 +100,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               label="Fecha de creación"
               value={fechaCreacion}
               disabled
-
             />
           </Grid>
           <Grid item xs={3}>
@@ -117,7 +116,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               fullWidth
               required
               inputProps={inputProps}
-
             >
               <MenuItem value="Activo">Activo</MenuItem>
               <MenuItem value="Suspendido">Suspendido</MenuItem>
@@ -136,7 +134,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
           inputProps={inputProps}
-
         />
       </Grid>
       <Grid element xs={12}>
