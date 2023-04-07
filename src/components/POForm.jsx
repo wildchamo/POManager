@@ -7,6 +7,8 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
 function POForm({ name, see, closeModal }) {
+  const [fechaInicio, setfechaInicio] = React.useState();
+  const [fechaFin, setfechaFin] = React.useState();
   return (
     <Grid
       component="form"
@@ -43,15 +45,27 @@ function POForm({ name, see, closeModal }) {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <Grid container direction="row" alignItems="center">
             <Grid item xs={3}>
-              <DatePicker label="Fecha de inicio" />
+              <DatePicker
+                label="Fecha de inicio"
+                value={fechaInicio}
+                maxDate={fechaFin}
+                onChange={(newValue) => setfechaInicio(newValue)}
+                minDate={dayjs()}
+              />
             </Grid>
             <Grid item xs={3}>
-              <DatePicker label="Fecha de finalización" />
+              <DatePicker
+                label="Fecha de finalización"
+                minDate={fechaInicio}
+                value={fechaFin}
+                onChange={(newValue) => setfechaFin(newValue)}
+              />
             </Grid>
             <Grid item xs={3}>
               <DatePicker
                 label="Fecha de creación"
                 defaultValue={dayjs()}
+                disabled
               />
             </Grid>
             <Grid item xs={3}>
