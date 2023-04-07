@@ -43,6 +43,8 @@ function POProvider({ children }) {
 
   const navigate = useNavigate();
 
+  const noProyectos = proyectos.length  ;
+
   const login = (username, unidad) => {
     setUser(username);
     setUnidad(unidad);
@@ -101,7 +103,15 @@ function POProvider({ children }) {
     setProyectos(newProyectos);
   };
 
-  const auth = { user, login, logout, proyectos, createPO, editPO };
+  const auth = {
+    user,
+    login,
+    logout,
+    proyectos,
+    createPO,
+    editPO,
+    noProyectos,
+  };
   return <POContext.Provider value={auth}>{children}</POContext.Provider>;
 }
 
