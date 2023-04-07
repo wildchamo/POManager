@@ -25,6 +25,10 @@ function POproyect({ proyecto }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [open2, setOpen2] = React.useState(false);
+  const handleOpen2 = () => setOpen2(true);
+  const handleClose2 = () => setOpen2(false);
+
   return (
     <>
       <TableRow>
@@ -45,7 +49,7 @@ function POproyect({ proyecto }) {
           ● {proyecto.estado}
         </TableCell>
         <TableCell align="center">
-          <IconButton>
+          <IconButton onClick={handleOpen2}>
             <EditIcon />
           </IconButton>
         </TableCell>
@@ -60,14 +64,22 @@ function POproyect({ proyecto }) {
           </IconButton>
         </TableCell>
       </TableRow>
-
       <Modal open={open} onClose={handleClose}>
-      <POForm
-                see={true}
-                closeModal={handleClose}
-                proyecto={proyecto}
-                name={"Detalles del proyecto"}
-              />
+        <POForm
+          see={true}
+          closeModal={handleClose}
+          proyecto={proyecto}
+          name={"Detalles del proyecto"}
+        />
+      </Modal>
+
+      <Modal open={open2} onClose={handleClose2}>
+        <POForm
+          see={false}
+          closeModal={handleClose2}
+          proyecto={proyecto}
+          name={"Detalles del proyecto"}
+        />
       </Modal>
     </>
   );
