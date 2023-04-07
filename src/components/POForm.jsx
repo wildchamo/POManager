@@ -10,11 +10,11 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
 
   fechaCreacion = yyyy + "-" + mm + "-" + dd;
 
-  const [fechaInicio, setfechaInicio] = React.useState("");
-  const [fechaFin, setfechaFin] = React.useState("");
-  const [nombre, setNombre] = React.useState("");
-  const [estado, setEstado] = React.useState("");
-  const [descripcion, setDescripcion] = React.useState("");
+  const [fechaInicio, setfechaInicio] = React.useState(proyecto.fechaInicio);
+  const [fechaFin, setfechaFin] = React.useState(proyecto.fechaFin);
+  const [nombre, setNombre] = React.useState(proyecto.nombre);
+  const [estado, setEstado] = React.useState(proyecto.estado);
+  const [descripcion, setDescripcion] = React.useState(proyecto.descripcion);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -24,10 +24,13 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
       estado,
       fechaInicio,
       fechaFin,
-     fechaCreacion,
+      fechaCreacion,
       descripcion
     );
     closeModal();
+  };
+  const inputProps = {
+    disabled: see === true ? true : false,
   };
 
   return (
@@ -49,7 +52,9 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
       }}
     >
       <Grid element xs={12}>
-        <Typography>{name} {proyecto.nombre}</Typography>
+        <Typography>
+          {name} {proyecto.nombre}
+        </Typography>
       </Grid>
       <Grid element xs={12}>
         <TextField
@@ -62,6 +67,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           autoFocus
           fullWidth
           required
+          inputProps={inputProps}
         />
       </Grid>
 
@@ -75,6 +81,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               onChange={(e) => setfechaInicio(e.target.value)}
               min={fechaCreacion}
               max={fechaFin}
+
             />
           </Grid>
           <Grid item xs={3}>
@@ -93,6 +100,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               label="Fecha de creación"
               value={fechaCreacion}
               disabled
+
             />
           </Grid>
           <Grid item xs={3}>
@@ -108,6 +116,8 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               select
               fullWidth
               required
+              inputProps={inputProps}
+
             >
               <MenuItem value="Activo">Activo</MenuItem>
               <MenuItem value="Suspendido">Suspendido</MenuItem>
@@ -125,6 +135,8 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           fullWidth
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
+          inputProps={inputProps}
+
         />
       </Grid>
       <Grid element xs={12}>
@@ -134,6 +146,10 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           </Typography>
 
           {see === true ? (
+            <Button variant="contained" onClick={closeModal}>
+              Aceptar
+            </Button>
+          ) : (
             <Stack
               direction="row"
               justifyContent="space-between"
@@ -144,10 +160,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               </Button>
               <Button onClick={closeModal}>Cancelar</Button>
             </Stack>
-          ) : (
-            <Button variant="contained" onClick={closeModal}>
-              Aceptar
-            </Button>
           )}
         </Stack>
       </Grid>
