@@ -20,12 +20,12 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
     e.preventDefault();
     handleEvent(
       proyecto.id,
-      nombre,
-      estado,
-      fechaInicio,
-      fechaFin,
-      fechaCreacion,
-      descripcion
+      nombre
+      // estado,
+      // fechaInicio,
+      // fechaFin,
+      // fechaCreacion,
+      // descripcion
     );
     closeModal();
   };
@@ -55,6 +55,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
         <Typography>
           {name} {proyecto.nombre}
         </Typography>
+        <Typography>{proyecto.id}</Typography>
       </Grid>
       <Grid element xs={12}>
         <TextField
@@ -79,7 +80,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               label="Fecha de inicio"
               value={fechaInicio}
               onChange={(e) => setfechaInicio(e.target.value)}
-              min={fechaCreacion}
               max={fechaFin}
               disabled={see}
             />

@@ -43,7 +43,7 @@ function POProvider({ children }) {
 
   const navigate = useNavigate();
 
-  const noProyectos = proyectos.length  ;
+  const noProyectos = proyectos.length;
 
   const login = (username, unidad) => {
     setUser(username);
@@ -98,9 +98,7 @@ function POProvider({ children }) {
   ) => {
     const POIndex = proyectos.findIndex((proyecto) => proyecto.id === id);
 
-    const newProyectos = [...proyectos];
-    newProyectos[id].nombre = nombre;
-    setProyectos(newProyectos);
+    proyectos[POIndex].nombre = nombre;
   };
 
   const auth = {
