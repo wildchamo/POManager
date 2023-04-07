@@ -85,7 +85,23 @@ function POProvider({ children }) {
     setProyectos(newProyectos);
   };
 
-  const auth = { user, login, logout, proyectos, createPO };
+  const editPO = (
+    id,
+    nombre
+    // estado,
+    // fechaInicio,
+    // fechaFin,
+    // fechaCreacion,
+    // descripcion
+  ) => {
+    const POIndex = proyectos.findIndex((proyecto) => proyecto.id === id);
+
+    const newProyectos = [...proyectos];
+    newProyectos[id].nombre = nombre;
+    setProyectos(newProyectos);
+  };
+
+  const auth = { user, login, logout, proyectos, createPO, editPO };
   return <POContext.Provider value={auth}>{children}</POContext.Provider>;
 }
 
