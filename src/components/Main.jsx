@@ -5,7 +5,7 @@ import PieChart from "./PieChart";
 
 function Main({ unidad, proyectos }) {
   return (
-    <Grid container>
+    <Grid container sx={{paddingTop:"25px"}}>
       <Grid item xs={9}>
         <DataTable unidad={unidad} proyectos={proyectos} />
       </Grid>

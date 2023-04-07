@@ -20,21 +20,59 @@ function DataTable({ unidad, proyectos }) {
   const auth = useAuth();
 
   return (
-    <Paper elevation={1}>
-      <Typography variant="h6" color="initial" sx={{ textAlign: "center" }}>
+    <Paper elevation={1} sx={{ paddingTop: "20px" }}>
+      <Typography
+        variant="h6"
+        sx={{ textAlign: "center", color: "#666666", fontWeight: "700" }}
+      >
         Proyectos operativos de la Unidad de {unidad}
       </Typography>
 
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="center">Nombre</TableCell>
-            <TableCell align="center">Fecha de inicio</TableCell>
-            <TableCell align="center">Fecha de finalización</TableCell>
-            <TableCell align="center">Estado</TableCell>
-            <TableCell align="center">Editar</TableCell>
-            <TableCell align="center">Ver más</TableCell>
-            <TableCell align="center">Anular</TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Nombre
+            </TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Fecha de inicio
+            </TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Fecha de finalización
+            </TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Estado
+            </TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Editar
+            </TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Ver más
+            </TableCell>
+            <TableCell
+              sx={{ fontWeight: "400", color: "#666666" }}
+              align="center"
+            >
+              Anular
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
