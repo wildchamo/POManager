@@ -7,7 +7,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
 function POForm({ name, see, closeModal, handleEvent }) {
-  var fechaHoy = dayjs().format("DD/MM/YYYY");
+  var fechaHoy = dayjs();
 
   const [fechaInicio, setfechaInicio] = React.useState();
   const [fechaFin, setfechaFin] = React.useState();
@@ -17,8 +17,8 @@ function POForm({ name, see, closeModal, handleEvent }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    handleEvent(nombre, estado, fechaInicio);
-    console.log(nombre, estado, fechaHoy);
+    // handleEvent(nombre, estado, fechaInicio);
+    console.log(nombre, estado, fechaInicio);
     closeModal();
   };
 
@@ -63,24 +63,30 @@ function POForm({ name, see, closeModal, handleEvent }) {
             <Grid item xs={3}>
               <DatePicker
                 label="Fecha de inicio"
+                inputFormat="YYYY-MM-DD"
                 value={fechaInicio}
-                onChange={(newValue) => setfechaInicio(newValue)}
+                onChange={(e) => {
+                  setfechaInicio(e.target.value);
+                  console.log(e.target.value);
+                }}
                 maxDate={fechaFin}
                 minDate={dayjs()}
               />
             </Grid>
-            <Grid item xs={3}>
+            {/* <Grid item xs={3}>
               <DatePicker
                 label="Fecha de finalización"
+                inputFormat="YYYY-MM-DD"
                 minDate={fechaInicio}
                 value={fechaFin}
-                onChange={(newValue) => setfechaFin(newValue)}
+                onChange={(e) => setfechaFin(e.target.value)}
               />
             </Grid>
             <Grid item xs={3}>
               <DatePicker
                 label="Fecha de creación"
-                defaultValue={dayjs()}
+                format="YYYY-MM-DD"
+                defaultValue={fechaHoy}
                 disabled
               />
             </Grid>
@@ -100,7 +106,7 @@ function POForm({ name, see, closeModal, handleEvent }) {
               >
                 <MenuItem value="Activo">Activo</MenuItem>
                 <MenuItem value="Suspendido">Suspendido</MenuItem>
-              </TextField>
+              </TextField> */}
             </Grid>
           </Grid>
         </LocalizationProvider>
