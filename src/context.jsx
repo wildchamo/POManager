@@ -12,7 +12,7 @@ const POprojets = [
     fechaCreacion: "",
     estado: "Anulado",
     descripcion: "Soy una descripción",
-    motivoCancelacion: "jose",
+    justificacion: "jose",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const POprojets = [
     fechaCreacion: "2022-10-04",
     estado: "Activo",
     descripcion: "Soy una descripción",
-    motivoCancelacion: "",
+    justificacion: "",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const POprojets = [
     fechaCreacion: "2021-11-03",
     estado: "Suspendido",
     descripcion: "Soy una descripción",
-    motivoCancelacion: "",
+    justificacion: "",
   },
 ];
 
@@ -40,21 +40,6 @@ function POProvider({ children }) {
   const [user, setUser] = React.useState(null);
   const [unidad, setUnidad] = React.useState(null);
   const [proyectos, setProyectos] = React.useState(POprojets);
-
-  let proyectosActivos = proyectos.filter(
-    (proyecto) => proyecto.estado === "Activo"
-  );
-  let proyectosActivosValue = proyectosActivos.length;
-
-  let proyectosSuspendidos = proyectos.filter(
-    (proyecto) => proyecto.estado === "Suspendido"
-  );
-  let proyectosSuspendidosValue = proyectosSuspendidos.length;
-
-  let proyectosAnulados = proyectos.filter(
-    (proyecto) => proyecto.estado === "Anulado"
-  );
-  let proyectosAnuladosValue = proyectosAnulados.length;
 
   const navigate = useNavigate();
 
@@ -121,6 +106,28 @@ function POProvider({ children }) {
     proyectos[POIndex].descripcion = descripcion;
   };
 
+  const anulPO = (id, justificacion) => {
+    const POIndex = proyectos.findIndex((proyecto) => proyecto.id === id);
+
+    proyectos[POIndex].justificacion = justificacion;
+    proyectos[POIndex].estado = "Anulado";
+  };
+
+  let proyectosActivos = proyectos.filter(
+    (proyecto) => proyecto.estado === "Activo"
+  );
+  let proyectosActivosValue = proyectosActivos.length;
+
+  let proyectosSuspendidos = proyectos.filter(
+    (proyecto) => proyecto.estado === "Suspendido"
+  );
+  let proyectosSuspendidosValue = proyectosSuspendidos.length;
+
+  let proyectosAnulados = proyectos.filter(
+    (proyecto) => proyecto.estado === "Anulado"
+  );
+  let proyectosAnuladosValue = proyectosAnulados.length;
+
   const auth = {
     user,
     login,
@@ -128,6 +135,7 @@ function POProvider({ children }) {
     proyectos,
     createPO,
     editPO,
+    anulPO,
     noProyectos,
     proyectosActivosValue,
     proyectosSuspendidosValue,
