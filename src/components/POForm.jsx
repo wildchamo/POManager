@@ -1,13 +1,14 @@
 import React from "react";
 import { Typography, Grid, TextField, Button, Stack } from "@mui/material";
 import { MenuItem } from "@mui/material";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
 
 function POForm({ name, see, closeModal, handleEvent }) {
-  var fechaHoy = dayjs();
+  var fechaCreacion = new Date();
+  var dd = String(fechaCreacion.getDate()).padStart(2, "0");
+  var mm = String(fechaCreacion.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var yyyy = fechaCreacion.getFullYear();
+
+  fechaCreacion = yyyy + "-" + mm + "-" + dd;
 
   const [fechaInicio, setfechaInicio] = React.useState();
   const [fechaFin, setfechaFin] = React.useState();
@@ -58,58 +59,53 @@ function POForm({ name, see, closeModal, handleEvent }) {
       </Grid>
 
       <Grid element xs={12}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Grid container direction="row" alignItems="center">
-            <Grid item xs={3}>
-              <DatePicker
-                label="Fecha de inicio"
-                inputFormat="YYYY-MM-DD"
-                value={fechaInicio}
-                onChange={(e) => {
-                  setfechaInicio(e.target.value);
-                  console.log(e.target.value);
-                }}
-                maxDate={fechaFin}
-                minDate={dayjs()}
-              />
-            </Grid>
-            {/* <Grid item xs={3}>
-              <DatePicker
-                label="Fecha de finalización"
-                inputFormat="YYYY-MM-DD"
-                minDate={fechaInicio}
-                value={fechaFin}
-                onChange={(e) => setfechaFin(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <DatePicker
-                label="Fecha de creación"
-                format="YYYY-MM-DD"
-                defaultValue={fechaHoy}
-                disabled
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
-                value={estado}
-                defaultValue={estado}
-                onChange={(e) => setEstado(e.target.value)}
-                margin="normal"
-                id="outlined-basic"
-                label="Estado"
-                placeholder="Selecciona el estado de tu proyecto"
-                autoFocus
-                select
-                fullWidth
-                required
-              >
-                <MenuItem value="Activo">Activo</MenuItem>
-                <MenuItem value="Suspendido">Suspendido</MenuItem>
-              </TextField> */}
-            </Grid>
+        <Grid container direction="row" alignItems="center">
+          <Grid item xs={3}>
+            <input
+              type="date"
+              label="Fecha de inicio"
+              value={fechaInicio}
+              onChange={(e) => setfechaInicio(e.target.value)}
+              min={fechaCreacion}
+              max={fechaFin}
+            />
           </Grid>
-        </LocalizationProvider>
+          <Grid item xs={3}>
+            <input
+              type="date"
+              label="Fecha de finalización"
+              value={fechaFin}
+              onChange={(e) => setfechaFin(e.target.value)}
+              min={fechaInicio}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <input
+              type="date"
+              label="Fecha de creación"
+              value={fechaCreacion}
+              disabled
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <TextField
+              value={estado}
+              defaultValue={estado}
+              onChange={(e) => setEstado(e.target.value)}
+              margin="normal"
+              id="outlined-basic"
+              label="Estado"
+              placeholder="Selecciona el estado de tu proyecto"
+              autoFocus
+              select
+              fullWidth
+              required
+            >
+              <MenuItem value="Activo">Activo</MenuItem>
+              <MenuItem value="Suspendido">Suspendido</MenuItem>
+            </TextField>
+          </Grid>
+        </Grid>
       </Grid>
       <Grid element xs={12}>
         <TextField
