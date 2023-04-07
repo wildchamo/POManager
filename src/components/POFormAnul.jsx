@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Grid, TextField, Button, Stack } from "@mui/material";
 
-function POFormAnul({ proyecto }) {
+function POFormAnul({ proyecto, closeModal }) {
   return (
     <Grid
       component="form"
@@ -45,7 +45,7 @@ function POFormAnul({ proyecto }) {
           alignItems="center"
           spacing={4}
         >
-          <Button variant="contained">Cancelar</Button>
+          <Button variant="contained" onClick={closeModal}>Cancelar</Button>
           <Button>Anular proyecto</Button>
         </Stack>
       </Grid>
