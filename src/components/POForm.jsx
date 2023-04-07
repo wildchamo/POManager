@@ -20,12 +20,12 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
     e.preventDefault();
     handleEvent(
       proyecto.id,
-      nombre
-      // estado,
-      // fechaInicio,
-      // fechaFin,
-      // fechaCreacion,
-      // descripcion
+      nombre,
+      estado,
+      fechaInicio,
+      fechaFin,
+      fechaCreacion,
+      descripcion
     );
     closeModal();
   };

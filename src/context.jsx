@@ -89,16 +89,21 @@ function POProvider({ children }) {
 
   const editPO = (
     id,
-    nombre
-    // estado,
-    // fechaInicio,
-    // fechaFin,
-    // fechaCreacion,
-    // descripcion
+    nombre,
+    estado,
+    fechaInicio,
+    fechaFin,
+    fechaCreacion,
+    descripcion
   ) => {
     const POIndex = proyectos.findIndex((proyecto) => proyecto.id === id);
 
     proyectos[POIndex].nombre = nombre;
+    proyectos[POIndex].estado = estado;
+    proyectos[POIndex].fechaInicio = fechaInicio;
+    proyectos[POIndex].fechaFin = fechaFin;
+    proyectos[POIndex].fechaCreacion = fechaCreacion;
+    proyectos[POIndex].descripcion = descripcion;
   };
 
   const auth = {
