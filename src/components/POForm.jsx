@@ -10,8 +10,8 @@ function POForm({ name, see, closeModal, handleEvent }) {
 
   fechaCreacion = yyyy + "-" + mm + "-" + dd;
 
-  const [fechaInicio, setfechaInicio] = React.useState();
-  const [fechaFin, setfechaFin] = React.useState();
+  const [fechaInicio, setfechaInicio] = React.useState("");
+  const [fechaFin, setfechaFin] = React.useState("");
   const [nombre, setNombre] = React.useState("");
   const [estado, setEstado] = React.useState("");
   const [descripcion, setDescripcion] = React.useState("");
@@ -19,7 +19,14 @@ function POForm({ name, see, closeModal, handleEvent }) {
   const handleClick = (e) => {
     e.preventDefault();
     // handleEvent(nombre, estado, fechaInicio);
-    console.log(nombre, estado, fechaInicio);
+    handleEvent(
+      nombre,
+      estado,
+      fechaInicio,
+      fechaFin
+      // fechaCreacion,
+      // descripcion
+    );
     closeModal();
   };
 
@@ -73,10 +80,11 @@ function POForm({ name, see, closeModal, handleEvent }) {
           <Grid item xs={3}>
             <input
               type="date"
-              label="Fecha de finalización"
+              label="Fecha de Finalización"
               value={fechaFin}
               onChange={(e) => setfechaFin(e.target.value)}
               min={fechaInicio}
+
             />
           </Grid>
           <Grid item xs={3}>

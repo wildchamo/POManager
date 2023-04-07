@@ -63,7 +63,7 @@ function POProvider({ children }) {
     return idmax + 1;
   }
 
-  const createPO = (nombre, estado, fechaInicio) => {
+  const createPO = (nombre, estado, fechaInicio, fechaFin, fechaCreacion,descripcion) => {
     const id = newPOID(proyectos);
     const newProyectos = [...proyectos];
     newProyectos.push({
@@ -71,6 +71,9 @@ function POProvider({ children }) {
       nombre,
       estado,
       fechaInicio,
+       fechaFin,
+      // fechaCreacion,
+      // descripcion
     });
     setProyectos(newProyectos);
   };
