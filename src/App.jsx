@@ -1,10 +1,16 @@
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
+import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { POProvider, PrivateRoute } from "./context";
 
+const font =  "'Work Sans', sans-serif";
+
 const theme = createTheme({
+  typography: {
+    fontFamily: font,
+  },
   palette: {
     mode: "light",
     primary: {
