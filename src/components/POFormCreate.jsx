@@ -41,7 +41,7 @@ function POFormCreate({ closeModal, handleEvent }) {
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "80%",
-        height: "60%",
+        height: { xs: "90%", md: "60%" },
         bgcolor: "background.paper",
         border: "2px solid #000",
         boxShadow: 24,
@@ -81,7 +81,6 @@ function POFormCreate({ closeModal, handleEvent }) {
                 style={{
                   height: "56px",
                   width:"200px",
-                  backgroundColor: "white",
                   borderRadius: "4px",
                   color: "#666666",
                 }}
@@ -136,7 +135,6 @@ function POFormCreate({ closeModal, handleEvent }) {
               id="outlined-basic"
               label="Estado"
               placeholder="Selecciona el estado de tu proyecto"
-              autoFocus
               select
               fullWidth
               required
@@ -153,7 +151,6 @@ function POFormCreate({ closeModal, handleEvent }) {
           id="outlined-basic"
           label="Descripción del proyecto"
           placeholder="Ingresa la descripción del proyecto"
-          autoFocus
           fullWidth
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}

@@ -90,7 +90,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
                 disabled={see}
                 style={{
                   height: "56px",
-                  width:"200px",
+                  width: "200px",
                   backgroundColor: "white",
                   borderRadius: "4px",
                   color: "#666666",
@@ -113,7 +113,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
                   height: "56px",
                   backgroundColor: "white",
                   borderRadius: "4px",
-                  width:"200px",
+                  width: "200px",
 
                   color: "#666666",
                 }}
@@ -132,8 +132,8 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
                   height: "56px",
                   backgroundColor: "white",
                   borderRadius: "4px",
-                  width:"200px",
-                  
+                  width: "200px",
+
                   color: "#666666",
                 }}
               />
@@ -148,7 +148,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               id="outlined-basic"
               label="Estado"
               placeholder="Selecciona el estado de tu proyecto"
-              autoFocus
               select
               fullWidth
               required
@@ -166,7 +165,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           id="outlined-basic"
           label="Descripción del proyecto"
           placeholder="Ingresa la descripción del proyecto"
-          autoFocus
           fullWidth
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
@@ -181,7 +179,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
             id="outlined-basic"
             label="Descripción del proyecto"
             placeholder="Ingresa la descripción del proyecto"
-            autoFocus
             fullWidth
             value={proyecto.justificacion}
             inputProps={inputProps}
