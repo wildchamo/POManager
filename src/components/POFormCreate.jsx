@@ -78,6 +78,13 @@ function POFormCreate({ closeModal, handleEvent }) {
                 onChange={(e) => setfechaInicio(e.target.value)}
                 min={fechaCreacion}
                 max={fechaFin}
+                style={{
+                  height: "56px",
+                  width:"200px",
+                  backgroundColor: "white",
+                  borderRadius: "4px",
+                  color: "#666666",
+                }}
               />
             </Stack>
           </Grid>
@@ -91,6 +98,13 @@ function POFormCreate({ closeModal, handleEvent }) {
                 value={fechaFin}
                 onChange={(e) => setfechaFin(e.target.value)}
                 min={fechaInicio}
+                style={{
+                  height: "56px",
+                  width:"200px",
+                  backgroundColor: "white",
+                  borderRadius: "4px",
+                  color: "#666666",
+                }}
               />
             </Stack>
           </Grid>
@@ -103,6 +117,13 @@ function POFormCreate({ closeModal, handleEvent }) {
                 label="Fecha de creación"
                 value={fechaCreacion}
                 disabled
+                style={{
+                  height: "56px",
+                  width:"200px",
+                  backgroundColor: "white",
+                  borderRadius: "4px",
+                  color: "#666666",
+                }}
               />
             </Stack>
           </Grid>

@@ -5,3 +5,7 @@ body{
     background-color: white;
     color: #666666;
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #666666;
+
+}
