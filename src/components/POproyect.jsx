@@ -29,8 +29,10 @@ function POproyect({ proyecto }) {
     <>
       <TableRow>
         <TableCell align="center">{proyecto.nombre}</TableCell>
-        <TableCell align="center">{proyecto.fechaInicio}</TableCell>
-        <TableCell align="center">{proyecto.fechaFin}</TableCell>
+        <TableCell align="center" sx={{ display: { xs: "none", md: "table-cell" } }}>
+          {proyecto.fechaInicio}
+        </TableCell>
+        <TableCell align="center" sx={{ display: { xs: "none", md: "table-cell" } }}>{proyecto.fechaFin}</TableCell>
         <TableCell
           align="center"
           sx={{
@@ -44,7 +46,7 @@ function POproyect({ proyecto }) {
         >
           ● {proyecto.estado}
         </TableCell>
-        <TableCell align="center">
+        <TableCell align="center" sx={{ display: { xs: "none", md: "table-cell" } }}>
           <IconButton onClick={handleOpen2}>
             <EditIcon />
           </IconButton>

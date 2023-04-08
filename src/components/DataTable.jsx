@@ -51,13 +51,13 @@ function DataTable({ unidad, proyectos }) {
               Nombre
             </TableCell>
             <TableCell
-              sx={{ fontWeight: "400", color: "#666666" }}
+              sx={{ fontWeight: "400", color: "#666666",display: { xs: 'none', md: 'table-cell' } }}
               align="center"
             >
               Fecha de inicio
             </TableCell>
             <TableCell
-              sx={{ fontWeight: "400", color: "#666666" }}
+              sx={{ fontWeight: "400", color: "#666666",display: { xs: 'none', md: 'table-cell' } }}
               align="center"
             >
               Fecha de finalización
@@ -69,7 +69,7 @@ function DataTable({ unidad, proyectos }) {
               Estado
             </TableCell>
             <TableCell
-              sx={{ fontWeight: "400", color: "#666666" }}
+              sx={{ fontWeight: "400", color: "#666666",display: { xs: 'none', md: 'table-cell' } }}
               align="center"
             >
               Editar
@@ -101,6 +101,7 @@ function DataTable({ unidad, proyectos }) {
         spacing={2}
       >
         <TablePagination
+        sx={{ display: { xs: "none", md: "block" } }}
           component="div"
           count={auth.noProyectos}
           page={page}
