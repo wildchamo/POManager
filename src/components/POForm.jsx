@@ -31,11 +31,11 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
   };
 
   const inputProps = {
-    disabled: see === true ? true : false
+    disabled: see === true ? true : false,
   };
   const inputProps2 = {
     disabled: see === true ? true : false,
-    disabled: proyecto.estado === "Anulado" ? true : false
+    disabled: proyecto.estado === "Anulado" ? true : false,
   };
 
   return (
@@ -141,28 +141,31 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
         />
       </Grid>
       <Grid element xs={12}>
-        <Stack direction="row" justifyContent="space-between">
-          <Typography>
-            Los campos marcados con ‘*’ son de carácter obligatorio.
-          </Typography>
-
-          {see === true ? (
+        {see === true ? (
+          <Stack direction="row" justifyContent="flex-end">
             <Button variant="contained" onClick={closeModal}>
               Aceptar
             </Button>
-          ) : (
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              sx={{ width: "240px" }}
-            >
-              <Button variant="contained" type="submit">
-                Aceptar
-              </Button>
-              <Button onClick={closeModal}>Cancelar</Button>
+          </Stack>
+        ) : (
+          <>
+            <Stack direction="row" justifyContent="space-between">
+              <Typography>
+                Los campos marcados con ‘*’ son de carácter obligatorio.
+              </Typography>
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                sx={{ width: "240px" }}
+              >
+                <Button variant="contained" type="submit">
+                  Aceptar
+                </Button>
+                <Button onClick={closeModal}>Cancelar</Button>
+              </Stack>
             </Stack>
-          )}
-        </Stack>
+          </>
+        )}
       </Grid>
     </Grid>
   );
