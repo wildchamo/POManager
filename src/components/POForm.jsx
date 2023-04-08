@@ -29,9 +29,13 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
     );
     closeModal();
   };
-  
+
   const inputProps = {
+    disabled: see === true ? true : false
+  };
+  const inputProps2 = {
     disabled: see === true ? true : false,
+    disabled: proyecto.estado === "Anulado" ? true : false
   };
 
   return (
@@ -56,7 +60,6 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
         <Typography>
           {name} {proyecto.nombre}
         </Typography>
-        <Typography>{proyecto.id}</Typography>
       </Grid>
       <Grid element xs={12}>
         <TextField
@@ -116,7 +119,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               select
               fullWidth
               required
-              inputProps={inputProps}
+              inputProps={inputProps2}
             >
               <MenuItem value="Activo">Activo</MenuItem>
               <MenuItem value="Suspendido">Suspendido</MenuItem>

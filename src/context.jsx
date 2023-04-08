@@ -107,7 +107,7 @@ function POProvider({ children }) {
     proyectos[POIndex].fechaCreacion = fechaCreacion;
     proyectos[POIndex].descripcion = descripcion;
 
-    setProyectosBuscados(proyectosBuscados);
+    setProyectos(proyectos);
   };
 
   const anulPO = (id, justificacion) => {
