@@ -68,31 +68,43 @@ function POFormCreate({ closeModal, handleEvent }) {
       <Grid element md={12}>
         <Grid container direction="row" alignItems="center">
           <Grid item md={3} xs={12}>
-            <input
-              type="date"
-              label="Fecha de inicio"
-              value={fechaInicio}
-              onChange={(e) => setfechaInicio(e.target.value)}
-              min={fechaCreacion}
-              max={fechaFin}
-            />
+            <Stack>
+              <Typography>Fecha de inicio</Typography>
+
+              <input
+                type="date"
+                label="Fecha de inicio"
+                value={fechaInicio}
+                onChange={(e) => setfechaInicio(e.target.value)}
+                min={fechaCreacion}
+                max={fechaFin}
+              />
+            </Stack>
           </Grid>
           <Grid item md={3} xs={12}>
-            <input
-              type="date"
-              label="Fecha de Finalización"
-              value={fechaFin}
-              onChange={(e) => setfechaFin(e.target.value)}
-              min={fechaInicio}
-            />
+            <Stack>
+              <Typography>Fecha de Finalización</Typography>
+
+              <input
+                type="date"
+                label="Fecha de Finalización"
+                value={fechaFin}
+                onChange={(e) => setfechaFin(e.target.value)}
+                min={fechaInicio}
+              />
+            </Stack>
           </Grid>
           <Grid item md={3} xs={12}>
-            <input
-              type="date"
-              label="Fecha de creación"
-              value={fechaCreacion}
-              disabled
-            />
+            <Stack>
+              <Typography>Fecha de creación</Typography>
+
+              <input
+                type="date"
+                label="Fecha de creación"
+                value={fechaCreacion}
+                disabled
+              />
+            </Stack>
           </Grid>
           <Grid item md={3} xs={12}>
             <TextField
@@ -128,7 +140,7 @@ function POFormCreate({ closeModal, handleEvent }) {
       </Grid>
       <Grid element xs={12}>
         <Stack direction="row" justifyContent="space-between">
-          <Typography sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Typography sx={{ display: { xs: "none", md: "block" } }}>
             Los campos marcados con ‘*’ son de carácter obligatorio.
           </Typography>
 
