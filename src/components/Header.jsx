@@ -28,7 +28,7 @@ function Header({ username, logout, setSearchValue }) {
         paddingLeft: "10px",
       }}
     >
-      <Grid item xs={5}>
+      <Grid item md={5} xs={10}>
         <Stack
           sx={{
             flexDirection: "row",
@@ -45,10 +45,11 @@ function Header({ username, logout, setSearchValue }) {
 
       <Grid
         item
-        xs={6}
+        md={6}
         sx={{
           display: "flex",
           justifyContent: "center",
+          display: { xs: 'none', md: 'block' } 
         }}
       >
         <TextField
@@ -75,7 +76,8 @@ function Header({ username, logout, setSearchValue }) {
 
       <Grid
         item
-        xs={1}
+        md={1}
+        xs={2}
         sx={{
           alignItems: "center",
         }}
