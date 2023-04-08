@@ -6,10 +6,10 @@ import PieChart from "./PieChart";
 function Main({ unidad, proyectos }) {
   return (
     <Grid container sx={{paddingTop:"25px"}}>
-      <Grid item xs={9}>
+      <Grid item md={9}>
         <DataTable unidad={unidad} proyectos={proyectos} />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item md={3} sx= {{display: { xs: 'none', md: 'block' }}} >
         <PieChart />
       </Grid>
     </Grid>
