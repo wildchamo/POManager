@@ -40,6 +40,7 @@ function POProvider({ children }) {
   const [user, setUser] = React.useState(null);
   const [unidad, setUnidad] = React.useState(null);
   const [proyectos, setProyectos] = React.useState(POprojets);
+  const [proyectosBuscados, setProyectosBuscados] = React.useState(proyectos);
 
   const navigate = useNavigate();
 
@@ -104,6 +105,8 @@ function POProvider({ children }) {
     proyectos[POIndex].fechaFin = fechaFin;
     proyectos[POIndex].fechaCreacion = fechaCreacion;
     proyectos[POIndex].descripcion = descripcion;
+
+    setProyectosBuscados(proyectosBuscados);
   };
 
   const anulPO = (id, justificacion) => {
@@ -128,6 +131,8 @@ function POProvider({ children }) {
   );
   let proyectosAnuladosValue = proyectosAnulados.length;
 
+  
+
   const auth = {
     user,
     login,
@@ -137,6 +142,7 @@ function POProvider({ children }) {
     editPO,
     anulPO,
     noProyectos,
+    proyectosBuscados,
     proyectosActivosValue,
     proyectosSuspendidosValue,
     proyectosAnuladosValue,
