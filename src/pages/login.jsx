@@ -10,7 +10,7 @@ function Login() {
       <Grid item md={5} xs={12}>
         <LoginBar />
       </Grid>
-      <Grid item md={7} sx={{ display: { xs: 'none', sm: 'block' } }}>
+      <Grid item md={7} sx={{ display: { xs: 'none', md: 'block' } }}>
         <img src={loginImg} />
       </Grid>
     </Grid>
