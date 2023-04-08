@@ -49,7 +49,10 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "80%",
-        height: proyecto.justificacion ? "70%" : "60%",
+        height: {
+          xs: proyecto.justificacion ? "100%" : "90%",
+          md: proyecto.justificacion ? "70%" : "60%",
+        },
         bgcolor: "background.paper",
         border: "2px solid #000",
         boxShadow: 24,
@@ -78,7 +81,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
 
       <Grid element md={12}>
         <Grid container direction="row" alignItems="center">
-          <Grid item md={3} xs={6}>
+          <Grid item md={3} xs={12}>
             <Stack>
               <Typography>Fecha de inicio</Typography>
               <input
@@ -99,7 +102,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
             </Stack>
           </Grid>
 
-          <Grid item md={3} xs={6}>
+          <Grid item md={3} xs={12}>
             <Stack>
               <Typography>Fecha de Finalización</Typography>
               <input
@@ -120,7 +123,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               />
             </Stack>
           </Grid>
-          <Grid item md={3} xs={6}>
+          <Grid item md={3} xs={12}>
             <Stack>
               <Typography>Fecha de Creación</Typography>
               <input
@@ -139,7 +142,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
               />
             </Stack>
           </Grid>
-          <Grid item md={3} xs={6}>
+          <Grid item md={3} xs={12}>
             <TextField
               value={estado}
               defaultValue={estado}
@@ -177,8 +180,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           <TextField
             margin="normal"
             id="outlined-basic"
-            label="Descripción del proyecto"
-            placeholder="Ingresa la descripción del proyecto"
+            label="Justificación anulación"
             fullWidth
             value={proyecto.justificacion}
             inputProps={inputProps}
