@@ -39,21 +39,21 @@ function PieChart() {
       </div>
       <Stack direction="row">
         <Typography sx={{ color: "#31B465" }}>●</Typography>
-        <Typography align="center" variant="h7">
+        <Typography align="center">
           {auth.proyectosActivosValue} proyectos activos
         </Typography>
       </Stack>
 
       <Stack direction="row">
         <Typography sx={{ color: "#FFD600" }}>●</Typography>
-        <Typography align="center" variant="h7">
+        <Typography align="center" >
           {auth.proyectosSuspendidosValue} proyectos suspendidos
         </Typography>
       </Stack>
 
       <Stack direction="row">
         <Typography sx={{ color: "#7E818C" }}>●</Typography>
-        <Typography align="center" variant="h7">
+        <Typography align="center" >
           {auth.proyectosAnuladosValue} proyectos anulados
         </Typography>
       </Stack>
