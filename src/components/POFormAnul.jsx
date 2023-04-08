@@ -21,15 +21,15 @@ function POFormAnul({ proyecto, closeModal, handleEvent }) {
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "60%",
-        height: "40%",
+        height: { xs: "40%", md: "30%" },
         bgcolor: "background.paper",
         border: "2px solid #000",
         boxShadow: 24,
-        p: 4,
+        p: 3,
       }}
     >
       <Grid item xs={12}>
-        <Typography variant="h5" color="initial">
+        <Typography variant="h5" color="#666666" fontSize={16}>
           Por qué desea anular el proyecto {proyecto.nombre}
         </Typography>
       </Grid>
@@ -41,7 +41,6 @@ function POFormAnul({ proyecto, closeModal, handleEvent }) {
           id="outlined-basic"
           label="Justificación"
           placeholder="Ingresa la justificación :("
-          autoFocus
           fullWidth
           required
         />
