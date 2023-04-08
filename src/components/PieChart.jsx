@@ -30,8 +30,13 @@ function PieChart() {
       justifyContent="space-around"
       alignItems="center"
       spacing={2}
+      sx={{paddingTop:"10px"}}
     >
-      <Typography align="center" variant="h5">
+      <Typography
+        align="center"
+        variant="h5"
+        sx={{ textAlign: "center", color: "#666666", fontWeight: "700" }}
+      >
         Tienes {auth.noProyectos} proyectos!
       </Typography>
       <div style={{ width: 160, margin: "0 auto" }}>
@@ -46,14 +51,14 @@ function PieChart() {
 
       <Stack direction="row">
         <Typography sx={{ color: "#FFD600" }}>●</Typography>
-        <Typography align="center" >
+        <Typography align="center">
           {auth.proyectosSuspendidosValue} proyectos suspendidos
         </Typography>
       </Stack>
 
       <Stack direction="row">
         <Typography sx={{ color: "#7E818C" }}>●</Typography>
-        <Typography align="center" >
+        <Typography align="center">
           {auth.proyectosAnuladosValue} proyectos anulados
         </Typography>
       </Stack>
