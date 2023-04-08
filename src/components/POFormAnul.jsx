@@ -20,7 +20,7 @@ function POFormAnul({ proyecto, closeModal, handleEvent }) {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: "60%",
+        width: { xs: "80%", md: "60%" },
         height: { xs: "40%", md: "30%" },
         bgcolor: "background.paper",
         border: "2px solid #000",
