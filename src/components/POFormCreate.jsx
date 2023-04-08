@@ -65,9 +65,9 @@ function POFormCreate({ closeModal, handleEvent }) {
         />
       </Grid>
 
-      <Grid element xs={12}>
+      <Grid element md={12}>
         <Grid container direction="row" alignItems="center">
-          <Grid item xs={3}>
+          <Grid item md={3} xs={12}>
             <input
               type="date"
               label="Fecha de inicio"
@@ -77,7 +77,7 @@ function POFormCreate({ closeModal, handleEvent }) {
               max={fechaFin}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} xs={12}>
             <input
               type="date"
               label="Fecha de Finalización"
@@ -86,7 +86,7 @@ function POFormCreate({ closeModal, handleEvent }) {
               min={fechaInicio}
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} xs={12}>
             <input
               type="date"
               label="Fecha de creación"
@@ -94,7 +94,7 @@ function POFormCreate({ closeModal, handleEvent }) {
               disabled
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} xs={12}>
             <TextField
               value={estado}
               defaultValue={estado}
@@ -128,7 +128,7 @@ function POFormCreate({ closeModal, handleEvent }) {
       </Grid>
       <Grid element xs={12}>
         <Stack direction="row" justifyContent="space-between">
-          <Typography>
+          <Typography sx={{ display: { xs: 'none', md: 'block' } }}>
             Los campos marcados con ‘*’ son de carácter obligatorio.
           </Typography>
 
