@@ -9,7 +9,7 @@ function Dashboard() {
 
   return (
     <>
-      <Header logout={auth.logout} username={auth.user.username} />
+      <Header logout={auth.logout} setSearchValue={auth.setSearchValue} username={auth.user.username} />
       <Main proyectos={auth.proyectosBuscados} unidad={auth.user.unidad}/>
     </>
   );

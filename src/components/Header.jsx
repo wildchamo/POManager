@@ -12,7 +12,14 @@ import logoHeader from "../img/logoheader.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header({ username, logout }) {
+function Header({ username, logout, setSearchValue }) {
+  const [value, setValue] = React.useState("");
+
+  const onSearchValueChange = (event) => {
+    setValue(event.target.value);
+    setSearchValue(value)
+  };
+
   return (
     <Grid
       container
@@ -52,8 +59,8 @@ function Header({ username, logout }) {
           sx={{
             width: "500px",
           }}
-          // value={valueInput}
-          // onChange={onSearchValueChange} onClick={onHandleSubmit}
+          onChange={onSearchValueChange}
+          value={value}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

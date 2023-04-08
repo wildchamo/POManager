@@ -40,7 +40,8 @@ function POProvider({ children }) {
   const [user, setUser] = React.useState(null);
   const [unidad, setUnidad] = React.useState(null);
   const [proyectos, setProyectos] = React.useState(POprojets);
-  const [proyectosBuscados, setProyectosBuscados] = React.useState(proyectos);
+  const [searchValue, setSearchValue] = React.useState("");
+  let proyectosBuscados = [];
 
   const navigate = useNavigate();
 
@@ -131,7 +132,15 @@ function POProvider({ children }) {
   );
   let proyectosAnuladosValue = proyectosAnulados.length;
 
-  
+  if (!searchValue.length >= 1) {
+    proyectosBuscados = proyectos;
+  } else {
+    proyectosBuscados = proyectos.filter((proyecto) => {
+      const proyectoNombre = proyecto.nombre.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return proyectoNombre.includes(searchText);
+    });
+  }
 
   const auth = {
     user,
@@ -146,6 +155,7 @@ function POProvider({ children }) {
     proyectosActivosValue,
     proyectosSuspendidosValue,
     proyectosAnuladosValue,
+    setSearchValue,
   };
   return <POContext.Provider value={auth}>{children}</POContext.Provider>;
 }
