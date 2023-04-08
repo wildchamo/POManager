@@ -80,8 +80,10 @@ function POFormCreate({ closeModal, handleEvent }) {
                 max={fechaFin}
                 style={{
                   height: "56px",
-                  width:"200px",
+                  width: "200px",
                   borderRadius: "4px",
+                  backgroundColor: "white",
+
                   color: "#666666",
                 }}
               />
@@ -99,7 +101,7 @@ function POFormCreate({ closeModal, handleEvent }) {
                 min={fechaInicio}
                 style={{
                   height: "56px",
-                  width:"200px",
+                  width: "200px",
                   backgroundColor: "white",
                   borderRadius: "4px",
                   color: "#666666",
@@ -118,7 +120,7 @@ function POFormCreate({ closeModal, handleEvent }) {
                 disabled
                 style={{
                   height: "56px",
-                  width:"200px",
+                  width: "200px",
                   backgroundColor: "white",
                   borderRadius: "4px",
                   color: "#666666",
