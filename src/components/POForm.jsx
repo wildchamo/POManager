@@ -49,7 +49,7 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "80%",
-        height: "60%",
+        height: proyecto.justificacion ? "70%" : "60%",
         bgcolor: "background.paper",
         border: "2px solid #000",
         boxShadow: 24,
@@ -140,6 +140,24 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
           inputProps={inputProps}
         />
       </Grid>
+
+      {see === true && proyecto.justificacion ? (
+        <Grid element xs={12}>
+          <TextField
+            margin="normal"
+            id="outlined-basic"
+            label="Descripción del proyecto"
+            placeholder="Ingresa la descripción del proyecto"
+            autoFocus
+            fullWidth
+            value={proyecto.justificacion}
+            inputProps={inputProps}
+          />
+        </Grid>
+      ) : (
+        <br />
+      )}
+
       <Grid element xs={12}>
         {see === true ? (
           <Stack direction="row" justifyContent="flex-end">
