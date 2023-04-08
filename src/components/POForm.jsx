@@ -76,37 +76,70 @@ function POForm({ name, see, closeModal, handleEvent, proyecto }) {
         />
       </Grid>
 
-      <Grid element xs={12}>
+      <Grid element md={12}>
         <Grid container direction="row" alignItems="center">
-          <Grid item xs={3}>
-            <input
-              type="date"
-              label="Fecha de inicio"
-              value={fechaInicio}
-              onChange={(e) => setfechaInicio(e.target.value)}
-              max={fechaFin}
-              disabled={see}
-            />
+          <Grid item md={3} xs={6}>
+            <Stack>
+              <Typography>Fecha de inicio</Typography>
+              <input
+                type="date"
+                label="Fecha de inicio"
+                value={fechaInicio}
+                onChange={(e) => setfechaInicio(e.target.value)}
+                max={fechaFin}
+                disabled={see}
+                style={{
+                  height: "56px",
+                  width:"200px",
+                  backgroundColor: "white",
+                  borderRadius: "4px",
+                  color: "#666666",
+                }}
+              />
+            </Stack>
           </Grid>
-          <Grid item xs={3}>
-            <input
-              type="date"
-              label="Fecha de Finalización"
-              value={fechaFin}
-              onChange={(e) => setfechaFin(e.target.value)}
-              min={fechaInicio}
-              disabled={see}
-            />
+
+          <Grid item md={3} xs={6}>
+            <Stack>
+              <Typography>Fecha de Finalización</Typography>
+              <input
+                type="date"
+                label="Fecha de Finalización"
+                value={fechaFin}
+                onChange={(e) => setfechaFin(e.target.value)}
+                min={fechaInicio}
+                disabled={see}
+                style={{
+                  height: "56px",
+                  backgroundColor: "white",
+                  borderRadius: "4px",
+                  width:"200px",
+
+                  color: "#666666",
+                }}
+              />
+            </Stack>
           </Grid>
-          <Grid item xs={3}>
-            <input
-              type="date"
-              label="Fecha de creación"
-              value={fechaCreacion}
-              disabled
-            />
+          <Grid item md={3} xs={6}>
+            <Stack>
+              <Typography>Fecha de Creación</Typography>
+              <input
+                type="date"
+                label="Fecha de creación"
+                value={fechaCreacion}
+                disabled
+                style={{
+                  height: "56px",
+                  backgroundColor: "white",
+                  borderRadius: "4px",
+                  width:"200px",
+                  
+                  color: "#666666",
+                }}
+              />
+            </Stack>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} xs={6}>
             <TextField
               value={estado}
               defaultValue={estado}
