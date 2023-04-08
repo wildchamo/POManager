@@ -26,7 +26,7 @@ function LoginBar() {
       alignItems="center"
       spacing={2}
       padding="0 50px"
-      sx={{ width: "64vh" }}
+      sx={{ height: "100vh" }}
     >
       <img src={logoPO} />
 
