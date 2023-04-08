@@ -24,8 +24,8 @@ function Header({ username, logout, setSearchValue }) {
     <Grid
       container
       sx={{
-        marginTop: "14px",
-        marginLeft: "10px",
+        paddingTop: "14px",
+        paddingLeft: "10px",
       }}
     >
       <Grid item xs={5}>
