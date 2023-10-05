@@ -8,6 +8,7 @@ function Login() {
   return (
     <Grid container direction="row">
       <Grid item md={5} xs={12}>
+        holaa
         <LoginBar />
       </Grid>
       <Grid item md={7} sx={{ display: { xs: 'none', md: 'block' } }}>
